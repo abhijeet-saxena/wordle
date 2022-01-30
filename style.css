@@ -121,3 +121,20 @@ button[data-val="A"] {
 #keyboard button[data-val="Backspace"] {
   width: 13%;
 }
+
+@media screen and (max-width: 500px) {
+  body {
+    width: 95vw;
+    min-width: 95vw;
+    padding: 0;
+  }
+  .grid {
+    padding: 10vw 0vw;
+  }
+  #keyboard button[data-val="Enter"] {
+    width: 13%;
+  }
+  #keyboard button[data-val="Backspace"] {
+    width: 11%;
+  }
+}
