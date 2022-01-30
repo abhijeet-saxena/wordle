@@ -105,7 +105,7 @@ input {
   padding: 1rem 0;
 }
 
-#keyboard button {
+section button {
   background: lightgray;
   height: 50px;
   width: calc(10% - 9px);
@@ -122,7 +122,7 @@ button[data-val="A"] {
   width: 13%;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 400px) {
   body {
     width: 95vw;
     min-width: 95vw;

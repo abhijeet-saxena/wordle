@@ -62,9 +62,7 @@ document.addEventListener("keyup", (e) => {
 });
 
 function disableInputs(enabled) {
-  const inputs = document.querySelectorAll("input");
-
-  inputs.forEach((i, index) => {
+  document.querySelectorAll("input").forEach((i, index) => {
     i.disabled = index < enabled || index > enabled + 4 ? true : false;
   });
 
@@ -72,12 +70,19 @@ function disableInputs(enabled) {
 }
 
 function setCorrectClass(elem, i) {
+  const keyboardButton = document.querySelector(
+    `[data-val="${elem.value.toUpperCase()}"]`
+  );
+
   if (randomWord[i].toLowerCase() === elem.value.toLowerCase()) {
-    elem.classList.add("correct");
+    elem.classList = "correct";
+    keyboardButton.classList = "correct";
   } else if (randomWord.includes(elem.value.toLowerCase())) {
-    elem.classList.add("maybe");
+    elem.classList = "maybe";
+    keyboardButton.classList = "maybe";
   } else {
-    elem.classList.add("wrong");
+    elem.classList = "wrong";
+    keyboardButton.classList = "wrong";
   }
 }
 
