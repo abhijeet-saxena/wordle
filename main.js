@@ -41,17 +41,17 @@ document.addEventListener("keyup", (e) => {
     }
 
     for (let i in inputs) {
-      setTimeout(setCorrectClass, i * 250, inputs[i], i);
+      setTimeout(setCorrectClass, i * 500, inputs[i], i);
     }
 
     setTimeout(() => {
       if (randomWord.toLowerCase() === guessedWord.toLowerCase()) {
-        alert("You W0n");
+        alert("You Won");
       } else {
         currentRow += 5;
         disableInputs(currentRow);
       }
-    }, 1500);
+    }, 2500);
   } else {
     focussedElem.classList.add("filled");
     focussedElem.value = focussedElem.value || e.key;
