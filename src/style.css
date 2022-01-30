@@ -1,3 +1,5 @@
+/* Reset Styles & Global styles*/
+
 *,
 *::before,
 *::after {
@@ -13,6 +15,12 @@ button {
   text-align: center;
 }
 
+/* CSS Variables */
+
+:root {
+  --main-bg-color: brown;
+}
+
 body {
   display: flex;
   flex-direction: column;
@@ -22,6 +30,8 @@ body {
   min-width: 500px;
   margin: 0 auto;
 }
+
+/* Navigation bar styles */
 
 nav {
   display: flex;
@@ -43,13 +53,17 @@ nav button {
   font-size: 1rem;
 }
 
-.grid {
+/* Main container styles */
+
+main {
   display: flex;
   flex-wrap: wrap;
   gap: 5px;
   padding: 10% 15%;
   justify-content: center;
 }
+
+/* Input Boxes Styles */
 
 input {
   aspect-ratio: 1;
@@ -62,29 +76,18 @@ input {
   text-transform: uppercase;
   user-select: none;
   pointer-events: none;
-  /* caret-color: transparent; */
 }
 
 .filled {
-  border: solid 2px;
-  transform: scale(1);
-  animation: shake 200ms linear;
-}
-
-@keyframes shake {
-  50% {
-    transform: scale(1.1);
-  }
-  100% {
-    transform: scale(1);
-  }
+  animation: shake 200ms ease-in-out;
 }
 
 .correct,
 .maybe,
 .wrong {
   color: white;
-  border: solid 1px;
+  border: solid 1px white;
+  animation: rotate 500ms ease-out;
 }
 
 .correct {
@@ -122,19 +125,44 @@ button[data-val="A"] {
   width: 13%;
 }
 
+/* Animations */
+
+@keyframes shake {
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes rotate {
+  to {
+    transform: rotateX(360deg);
+  }
+}
+
+/* Media Queries */
+
 @media screen and (max-width: 400px) {
   body {
     width: 95vw;
     min-width: 95vw;
     padding: 0;
   }
-  .grid {
-    padding: 10vw 0vw;
+  main {
+    padding: 10vw 0 0;
+  }
+  #keyboard {
+    margin-top: 0;
   }
   #keyboard button[data-val="Enter"] {
     width: 13%;
   }
   #keyboard button[data-val="Backspace"] {
     width: 11%;
+  }
+  input {
+    width: 20px;
   }
 }
