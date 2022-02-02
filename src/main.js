@@ -3,6 +3,7 @@ import db from "./db.js";
 window.onload = () => {
   const inputs = Array.from(document.querySelectorAll("input"));
   const keyboard = document.querySelector("#keyboard");
+  const toast = document.querySelector(".toast");
   const words = Object.keys(db);
   const randomWord = words[Math.floor(Math.random() * words.length)];
   console.log(randomWord);
@@ -42,7 +43,18 @@ window.onload = () => {
         if (!guessedWord) return;
 
         if (!(guessedWord in db)) {
-          alert("Wrong Word", guessedWord);
+          toast.animate(
+            [
+              { top: "150px", offset: 0.25 },
+              { opacity: 0.85, offset: 0.25 },
+              { top: "150px", offset: 1 },
+              { opacity: 1, offset: 1 },
+            ],
+            {
+              duration: 1500,
+              iterations: 1,
+            }
+          );
           return;
         }
 
