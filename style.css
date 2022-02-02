@@ -113,7 +113,7 @@ section button {
   font-weight: bold;
 }
 
-button[data-val="A"] {
+button[data-val="a"] {
   margin-left: 5%;
 }
 
@@ -150,7 +150,7 @@ button[data-val="A"] {
     padding: 30px;
   }
   #keyboard {
-    margin-bottom: 1.5rem;
+    margin-top: 0;
   }
   #keyboard button[data-val="Enter"] {
     width: 13%;
