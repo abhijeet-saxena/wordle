@@ -141,22 +141,21 @@ button[data-val="a"] {
 
 /* Media Queries */
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 500px) {
   body {
     width: 95vw;
-    padding: 0;
   }
   main {
-    padding: 30px;
+    padding: 25px;
   }
   #keyboard {
     margin-top: 0;
+    padding: 1rem 0.5rem;
   }
-  #keyboard button[data-val="Enter"] {
-    width: 13%;
-  }
+  #keyboard button[data-val="Enter"],
   #keyboard button[data-val="Backspace"] {
-    width: 11%;
+    width: fit-content;
+    padding: 0 4px;
   }
   input {
     width: 50px;
