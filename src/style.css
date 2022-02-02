@@ -70,7 +70,7 @@ input {
   font-size: 2.25rem;
   font-weight: bold;
   width: 65px;
-  height: 65px;
+  aspect-ratio: 1;
   text-transform: uppercase;
   pointer-events: none;
 }
@@ -103,6 +103,7 @@ input {
   flex-wrap: wrap;
   gap: 10px;
   padding: 1rem 0;
+  justify-content: center;
 }
 
 section button {
@@ -111,10 +112,6 @@ section button {
   width: calc(10% - 9px);
   border-radius: 5px;
   font-weight: bold;
-}
-
-button[data-val="a"] {
-  margin-left: 5%;
 }
 
 #keyboard button[data-val="Enter"],
@@ -158,7 +155,6 @@ button[data-val="a"] {
     padding: 0 4px;
   }
   input {
-    width: 50px;
-    height: 50px;
+    width: calc(20% - 10px);
   }
 }
