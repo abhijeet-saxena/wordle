@@ -112,11 +112,26 @@ section button {
   width: calc(10% - 9px);
   border-radius: 5px;
   font-weight: bold;
+  flex-grow: 1;
 }
 
 #keyboard button[data-val="Enter"],
 #keyboard button[data-val="Backspace"] {
   width: 13%;
+}
+
+.toast {
+  background: rgba(0, 0, 0, 0.75);
+  width: fit-content;
+  color: white;
+  padding: 0.25rem 1rem;
+  border-radius: 5px;
+  position: fixed;
+  left: 50%;
+  top: 100px;
+  transform: translateX(-50%);
+  z-index: 1;
+  opacity: 0;
 }
 
 /* Animations */
@@ -152,7 +167,6 @@ section button {
   #keyboard button[data-val="Enter"],
   #keyboard button[data-val="Backspace"] {
     width: fit-content;
-    padding: 0 4px;
   }
   input {
     width: calc(20% - 10px);
